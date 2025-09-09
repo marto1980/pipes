@@ -1,12 +1,24 @@
-import { Component, signal } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { Component } from '@angular/core'
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
+  standalone: true,
   templateUrl: './app.html',
-  styleUrl: './app.scss'
 })
 export class App {
-  protected readonly title = signal('pipes');
+  currentDate = new Date()
+  currentTemperaturs = {
+    berlin: 4.274_981_2,
+    newYork: 18.1214,
+    paris: 72.120_900_1,
+    chicago: 65.077_523_8,
+  }
+
+  historicTemperatures = [
+    25, 37, 19, -4, 28, 21, 19, 28, 33, 31, 9, 11, 5, -12, -5,
+  ]
+
+  onReset(index: number) {
+    this.historicTemperatures[index] = 18
+  }
 }
