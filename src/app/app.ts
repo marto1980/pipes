@@ -15,7 +15,7 @@ export class App {
   }
 
   historicTemperatures = [
-    25, 37, 19, -4, 28, 21, 19, 28, 33, 31, 9, 11, 5, -12, -5,
+    25, 37, 19, -4, 28, 21, 18, 27, 33, 31, 9, 11, 5, -12, -5,
   ]
 
   onReset(index: number) {
