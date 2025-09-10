@@ -19,6 +19,6 @@ export class App {
   ]
 
   onReset(index: number) {
-    this.historicTemperatures[index] = 18
+    this.historicTemperatures.splice(index, 1, 18)
   }
 }
