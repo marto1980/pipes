@@ -4,9 +4,13 @@ import { Pipe, PipeTransform } from '@angular/core'
   name: 'temperature',
 })
 export class TemperaturePipe implements PipeTransform {
-  transform(value: number, ...args: readonly unknown[]) {
+  transform(value: number | string, ...args: readonly unknown[]) {
     console.log('args', args)
 
-    return value.toString() + ' - transformed'
+    const celsius = typeof value === 'string' ? Number.parseFloat(value) : value
+
+    const fahrenheit = (celsius * 9) / 5 + 32
+
+    return `${fahrenheit.toString()} ° F`
   }
 }
