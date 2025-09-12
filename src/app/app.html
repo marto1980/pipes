@@ -7,7 +7,9 @@
         <p>{{ currentDate | date: 'medium' }}</p>
       </div>
     </header>
-    <p>New York: {{ currentTemperaturs.newYork | temperature }}</p>
+    <p>
+      New York: {{ currentTemperaturs.newYork | temperature: 'fah' : 'cel' }}
+    </p>
     <p>Berlin: {{ currentTemperaturs.berlin | number: '1.0-2' }}</p>
     <p>Paris: {{ currentTemperaturs.paris | number: '1.0-2' }}</p>
     <p>Chicago: {{ currentTemperaturs.chicago | number: '1.0-2' }}</p>
