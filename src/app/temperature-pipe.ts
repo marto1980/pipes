@@ -16,15 +16,13 @@ const getSymbol = (type: Temp) => (type === 'cel' ? '°C' : '°F')
   name: 'temperature',
 })
 export class TemperaturePipe implements PipeTransform {
-  transform(value: number | string | null, inputType: Temp, outputType?: Temp) {
-    if (!value) return ''
-
+  transform(value: number | string, inputType: Temp, outputType?: Temp) {
     const numValue =
       typeof value === 'string' ? Number.parseFloat(value) : value
 
     const outputValue = getTransformer(inputType, outputType)(numValue)
     const outputSymbol = getSymbol(outputType ?? inputType)
 
-    return `${outputValue.toString()} ${outputSymbol}`
+    return `${outputValue.toFixed(2)} ${outputSymbol}`
   }
 }
