@@ -7,7 +7,6 @@ enum SortDirection {
 
 @Pipe({
   name: 'sort',
-  pure: false,
 })
 export class SortPipe implements PipeTransform {
   transform(
