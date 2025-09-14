@@ -24,8 +24,6 @@ export class App {
   ]
 
   onReset(index: number) {
-    const historicTemperaturesCopy = [...this.historicTemperatures]
-    historicTemperaturesCopy.splice(index, 1, 18)
-    this.historicTemperatures = historicTemperaturesCopy
+    this.historicTemperatures.splice(index, 1, 18)
   }
 }
